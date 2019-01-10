@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block title %}
+Reviews
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm">
+        <ul>
+            <li class="media">
+                <img src="{{ res['image_url'] }}" alt="" itemprop="image" class="mr-4">
+                <div class="media-body">
+                    <div class="media-body">
+                        <h4 class="mt-0 mb-1">{{ res['title'] }}</h4>
+                        <span class="mb-1">{{ res['authors']['author']['name'] }}</span>
+                    </div>
+                    <div class="col-sm">
+                        <ul>
+                            <li>ISBN: {{ res['isbn'] }}</li>
+                            <li>Publication year: {{ res['publication_year'] }}</li>
+                            <li>Publisher: {{ res['publisher'] }}</li>
+                            <li>Avg. rating: {{ res['average_rating'] }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    {% for name,text in reviews.items() %}
+    <div class="col-sm-8">
+        <div class="panel panel-white post panel-shadow">
+            <div class="post-heading">
+                <div class="title display-5">
+                    <a><strong>{{ name }}</strong></a>
+                </div>
+            </div>
+            <div class="post-description">
+                <p>{{ text }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row">
+    <form action="" method="post">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="form_message">Your review</label>
+                <textarea name="form_message" id="" cols="30" rows="10" required="required" data-error="Please add a few words."></textarea>
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+        <div class="col-md-12"><input type="submit" value="Post review" class="btn btn-success btn-send"></div>
+    </form>
+</div>
+{% endblock %}

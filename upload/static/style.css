@@ -1,0 +1,15 @@
+body {
+  height: 100%;
+  -ms-flex-align: center;
+  background: #6495ed;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+.form-signin, .form-choose {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: auto;
+  padding: 1em;
+}
