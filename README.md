@@ -1,2 +1,1 @@
-# cs50-web-2018-x-projects
-Projects for the HarvardX CS50W course on edx.org.
+# A web app displaying book reviews from goodreads API.
